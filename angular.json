@@ -1,0 +1,39 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ksss": {
+      "projectType": "library",
+      "root": "projects/ksss",
+      "sourceRoot": "projects/ksss/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ksss/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ksss/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ksss/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ksss/src/test.ts",
+            "tsConfig": "projects/ksss/tsconfig.spec.json",
+            "karmaConfig": "projects/ksss/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ksss"
+}
