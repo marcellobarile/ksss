@@ -4,20 +4,20 @@ import { PersistanceService } from './persistance.service';
 
 @Injectable({ providedIn: 'root' })
 export class SimpleStateService {
-  private readonly state: { [key: string]: BehaviorSubject<unknown> } = {};
+  private readonly state: { [key: string]: BehaviorSubject<any> } = {};
 
   /**
    * Sync method to get the value of a given property.
    */
-  getProperty(key: string): unknown {
-    return this.state[key]?.getValue();
+  getProperty<T>(key: string): T {
+    return this.state[key]?.getValue() || PersistanceService.get(key);
   }
 
   /**
    * Async meethod to get the value of a given property.
    * When the defaultValue is passed, it's used as first value to be set end emitted.
    */
-  watchProperty(key: string, defaultValue?: unknown): Observable<unknown> {
+  watchProperty<T>(key: string, defaultValue?: T): Observable<T> {
     const persistedValue = PersistanceService.get(key);
 
     if (!this.state[key]) {
@@ -35,19 +35,20 @@ export class SimpleStateService {
    * Sets the value of a property.
    * If persist is true, the property is saved in the sessionStorage or in a cookie accordingly the browser support.
    */
-  setProperty(key: string, value: unknown, persist = false): void {
+  setProperty<T>(key: string, value: T, persist = false): void {
     if (this.state[key]) {
       this.state[key].next(value);
     } else {
-      this.state[key] = new BehaviorSubject<unknown>(value);
+      this.state[key] = new BehaviorSubject<T>(value);
     }
 
     if (persist) {
+      let persistable: T | string = value;
       if (typeof value === 'object') {
-        value = JSON.stringify(value);
+        persistable = JSON.stringify(value);
       }
 
-      PersistanceService.set(key, String(value));
+      PersistanceService.set(key, String(persistable));
     }
   }
 
