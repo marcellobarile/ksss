@@ -1,5 +1,5 @@
 {
-  "name": "ksss",
+  "name": "ngx-ksss",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^12.1.0",

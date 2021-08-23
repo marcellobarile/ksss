@@ -33,7 +33,7 @@ export class SimpleStateService {
 
   /**
    * Sets the value of a property.
-   * If persist is true, the property is saved in the sessionStorage or in a cookie accordingly the browser support.
+   * If persist is true, the property is saved in the localStorage or in a cookie accordingly the browser support.
    */
   setProperty<T>(key: string, value: T, persist = false): void {
     if (this.state[key]) {

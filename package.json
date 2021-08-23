@@ -1,6 +1,24 @@
 {
-  "name": "ksss",
+  "name": "ngx-ksss",
+  "description": "a lightweight app state management Angular library",
   "version": "1.0.0",
+  "author": {
+    "name": "Marcello Barile",
+    "email": "marcello.barile@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/marcellobarile/ksss/issues"
+  },
+  "homepage": "https://github.com/marcellobarile/ksss#readme",
+  "keywords": [
+    "state management",
+    "app state",
+    "angular",
+    "ng",
+    "ng2",
+    "angular2"
+  ],
+  "license": "GPL-3.0-or-later",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,17 +26,19 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
-  "peerDependencies": {
-    "js-cookie": "^3.0.0"
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcellobarile/ksss"
   },
-  "dependencies": {
-    "@angular/compiler": "~12.1.0",
-    "@angular/core": "~12.1.0",
-    "rxjs": "~6.6.0",
-    "tslib": "^2.2.0"
+  "peerDependencies": {
+    "js-cookie": "^3.0.0",
+    "rxjs": "~6.6.0"
   },
   "devDependencies": {
+    "@angular/compiler": "~12.1.0",
+    "@angular/core": "~12.1.0",
+    "tslib": "^2.2.0",
     "@angular-devkit/build-angular": "~12.1.4",
     "@angular/cli": "~12.1.4",
     "@angular/compiler-cli": "~12.1.0",
@@ -27,6 +47,7 @@
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.8.0",
     "js-cookie": "^3.0.0",
+    "rxjs": "~6.6.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
