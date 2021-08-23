@@ -10,7 +10,7 @@
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "ksss": ["dist/ksss/ksss", "dist/ksss"]
+      "ngx-ksss": ["dist/ngx-ksss/ngx-ksss", "dist/ngx-ksss"]
     },
     "sourceMap": true,
     "declaration": false,
