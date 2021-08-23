@@ -1,7 +1,7 @@
 {
   "name": "ngx-simple-state",
   "description": "a lightweight app state management Angular library",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Marcello Barile",
     "email": "marcello.barile@gmail.com"

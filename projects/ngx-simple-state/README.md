@@ -8,6 +8,8 @@ Install:
 npm i ngx-simple-state --save
 ```
 
+Run the example: https://stackblitz.com/edit/angular-ivy-cqpy8u?file=src/app/app.component.ts
+
 Example of usage:
 
 1. Setup your state service (which might also act as a Facade)
@@ -19,7 +21,7 @@ import { SimpleStateService } from "ngx-simple-state";
 export enum StateProperties {
   VERSION = "version",
   LOCALE = "locale",
-  NAME = "name",
+  RANDOM_VALUE = "randomValue",
 }
 
 @Injectable({ providedIn: "root" })
@@ -40,12 +42,16 @@ export class StateService {
     }
   }
 
-  set name(value: string) {
+  setRandomValue() {
     // The third argument has been omitted, the value will not be persisted
-    this.app.setProperty(StateProperties.NAME, "Foo Bar");
+    this.app.setProperty(
+      StateProperties.RANDOM_VALUE,
+      btoa(Math.random().toString())
+    );
   }
-  get name(): string | null {
-    return this.app.getProperty(StateProperties.NAME);
+
+  getRandomValue(): string | null {
+    return this.app.getProperty(StateProperties.RANDOM_VALUE);
   }
 }
 ```
@@ -55,7 +61,9 @@ export class StateService {
 ```ts
 // ...
 
-constructor(private state: StateService) {}
+constructor(private state: StateService) {
+  this.registerStateListeners();
+}
 
 // ...
 
@@ -63,18 +71,20 @@ constructor(private state: StateService) {}
 // NOTE: Remember to unsubscribe the listeners the way you prefer :-)
 private registerStateListeners(): void {
   this.state.app
-    .watchProperty<string>(StateProperties.NAME)
+    .watchProperty<string>(StateProperties.RANDOM_VALUE)
     .subscribe((value: string) => {
-      console.log(`Name changed to ${value}`);
+      if (value) {
+        console.log(`Random value changed to ${value}`);
+      }
     });
 }
 
 // Sync approach
-private sayName(): void {
-  const name = this.state.app.get(StateProperties.NAME);
+private readRandomValue(): void {
+  const value = this.state.getRandomValue();
 
-  if (name !== null) {
-    console.log(`Hello ${name}!`);
+  if (value && value !== null) {
+    console.log(`Random value is ${value}!`);
   }
 }
 // ...
