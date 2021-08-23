@@ -10,7 +10,10 @@
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "ngx-ksss": ["dist/ngx-ksss/ngx-ksss", "dist/ngx-ksss"]
+      "ngx-simple-state": [
+        "dist/ngx-simple-state/ngx-simple-state",
+        "dist/ngx-simple-state"
+      ]
     },
     "sourceMap": true,
     "declaration": false,

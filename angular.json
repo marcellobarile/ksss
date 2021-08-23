@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-ksss": {
+    "ngx-simple-state": {
       "projectType": "library",
-      "root": "projects/ngx-ksss",
-      "sourceRoot": "projects/ngx-ksss/src",
+      "root": "projects/ngx-simple-state",
+      "sourceRoot": "projects/ngx-simple-state/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/ngx-ksss/ng-package.json"
+            "project": "projects/ngx-simple-state/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngx-ksss/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ngx-simple-state/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ngx-ksss/tsconfig.lib.json"
+              "tsConfig": "projects/ngx-simple-state/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,13 +27,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ngx-ksss/src/test.ts",
-            "tsConfig": "projects/ngx-ksss/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-ksss/karma.conf.js"
+            "main": "projects/ngx-simple-state/src/test.ts",
+            "tsConfig": "projects/ngx-simple-state/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-simple-state/karma.conf.js"
           }
         }
       }
     }
   },
-  "defaultProject": "ngx-ksss"
+  "defaultProject": "ngx-simple-state"
 }

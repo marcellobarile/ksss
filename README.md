@@ -5,7 +5,7 @@ A lightweight Angular library to manage the app state without worrying about ove
 Install:
 
 ```
-npm i ngx-ksss --save
+npm i ngx-simple-state --save
 ```
 
 Example of usage:
@@ -14,7 +14,7 @@ Example of usage:
 
 ```ts
 import { Injectable } from "@angular/core";
-import { SimpleStateService } from "ngx-ksss";
+import { SimpleStateService } from "ngx-simple-state";
 
 export enum StateProperties {
   VERSION = "version",

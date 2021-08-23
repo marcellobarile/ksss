@@ -1,5 +1,5 @@
 {
-  "name": "ngx-ksss",
+  "name": "ngx-simple-state",
   "description": "a lightweight app state management Angular library",
   "version": "0.0.1",
   "author": {
@@ -7,9 +7,9 @@
     "email": "marcello.barile@gmail.com"
   },
   "bugs": {
-    "url": "https://github.com/marcellobarile/ksss/issues"
+    "url": "https://github.com/marcellobarile/simple-state/issues"
   },
-  "homepage": "https://github.com/marcellobarile/ksss#readme",
+  "homepage": "https://github.com/marcellobarile/simple-state#readme",
   "keywords": [
     "state management",
     "app state",
@@ -29,7 +29,7 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/marcellobarile/ksss"
+    "url": "https://github.com/marcellobarile/simple-state"
   },
   "peerDependencies": {
     "js-cookie": "^3.0.0",
