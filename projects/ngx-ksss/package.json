@@ -1,7 +1,7 @@
 {
   "name": "ngx-ksss",
   "description": "a lightweight app state management Angular library",
-  "version": "1.0.4",
+  "version": "0.0.1",
   "author": {
     "name": "Marcello Barile",
     "email": "marcello.barile@gmail.com"
